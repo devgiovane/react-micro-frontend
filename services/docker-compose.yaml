@@ -8,3 +8,13 @@ services:
     volumes:
       - /app/node_modules
       - ./core/:/usr/app/
+    depends_on:
+      - auth
+  auth:
+    build: ./auth
+    container_name: auth
+    ports:
+      - 3001:3001
+    volumes:
+      - /app/node_modules
+      - ./auth/:/usr/app/

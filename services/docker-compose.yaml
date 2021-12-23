@@ -10,6 +10,7 @@ services:
       - ./core/:/usr/app/
     depends_on:
       - auth
+      - data
   auth:
     build: ./auth
     container_name: auth
@@ -18,3 +19,11 @@ services:
     volumes:
       - /app/node_modules
       - ./auth/:/usr/app/
+  data:
+    build: ./data
+    container_name: data
+    ports:
+      - 3002:3002
+    volumes:
+      - /app/node_modules
+      - ./data/:/usr/app/

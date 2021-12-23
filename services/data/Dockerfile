@@ -5,6 +5,6 @@ ENV NODE_ENV development
 WORKDIR /usr/app
 COPY package.json .
 RUN yarn
-EXPOSE 3000
+EXPOSE 3002
 ENTRYPOINT [ "yarn" ]
 CMD [ "start" ]
